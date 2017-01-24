@@ -1,0 +1,14 @@
+{
+  "name": "parsewhite",
+  "version": "0.0.0",
+  "description": "A whitespace parser for `cu`",
+  "main": "parsewhite.js",
+  "scripts": {
+    "docs": "projectz && mos"
+  },
+  "keywords": [],
+  "author": "William Hilton <wmhilton@gmail.com>",
+  "license": "Unlicense",
+  "maintainers": [],
+  "contributors": []
+}
