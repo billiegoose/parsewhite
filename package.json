@@ -10,5 +10,8 @@
   "author": "William Hilton <wmhilton@gmail.com>",
   "license": "Unlicense",
   "maintainers": [],
-  "contributors": []
+  "contributors": [],
+  "devDependencies": {
+    "ava": "^0.17.0"
+  }
 }
