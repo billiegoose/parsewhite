@@ -14,6 +14,9 @@
 
 <!-- DESCRIPTION/ -->
 
+# :warning: WORK IN IDEATION PHASE - HIGHLY UNSTABLE :warning:
+## API AND EVEN THE POINT OF THE PROJECT CAN CHANGE WITH EACH COMMIT
+
 A *streaming* whitespace parser for `cu`.
 
 I'd like to start by making the perfect parser:
