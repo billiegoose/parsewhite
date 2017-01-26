@@ -9,12 +9,12 @@ module.exports = function watchFolderConfigure (opts) {
     const emitter = new EventEmitter()
     const watcher = sane(root, {glob: ['**/*.js']})
     watcher.on('ready', () => console.log('ready'))
-    watcher.on('change', (path, root, stat) => {
+    watcher.on('change', function watcherOnChange (path, root, stat) {
       path = upath.normalize(path)
       root = upath.normalize(root)
       emitter.emit('change', {path, root, stat})
     })
-    watcher.on('add', (path, root, stat) => {
+    watcher.on('add', function watcherOnAdd (path, root, stat) {
       path = upath.normalize(path)
       root = upath.normalize(root)
       emitter.emit('change', {path, root, stat})
@@ -24,9 +24,4 @@ module.exports = function watchFolderConfigure (opts) {
     }))
     return streamer
   }
-}
-if (!module.parent) {
-  let f = module.exports()
-  let s = f('.')
-  s.on('data', console.log)
 }

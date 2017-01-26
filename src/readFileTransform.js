@@ -6,7 +6,7 @@ function readFileTransformConfig (opts) {
   return function readFileTransform () {
     return thru((obj, cb) => {
       obj.stream = fs.createReadStream(upath.join(obj.root, obj.path))
-      console.log(obj.stream)
+      // console.log(obj.stream)
       cb(null, obj)
     })
   }
