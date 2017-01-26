@@ -14,7 +14,18 @@
 
 <!-- DESCRIPTION/ -->
 
-A whitespace parser for `cu`
+A *streaming* whitespace parser for `cu`.
+
+I'd like to start by making the perfect parser:
+
+- parse in parallel (multiple cores)
+- parse concurrently (async file I/O)
+- parse on file save (watch a file directory)
+
+FootNote: I originally wanted to piggy-back off Gulp, but neither Gulp v3 nor v4
+had fast enough recompile times. (6s and 2.5s respectively)
+
+Noooooowwww we're talking. I think we're in the 100ms response time. (Using the *sane* file watcher. Aptly named.)
 
 <!-- /DESCRIPTION -->
 

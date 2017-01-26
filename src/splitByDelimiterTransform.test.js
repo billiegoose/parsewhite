@@ -1,0 +1,27 @@
+'use strict'
+const test = require('ava')
+const f = require('./splitByDelimiterTransform')
+
+const s = require('./s2i')
+
+test('Splits lines', t => {
+  let ml = f({eol: '\n'})()
+  ml.write(s('test\nof\nthis\n'))
+  t.deepEqual(ml.read(), s('test'))
+  t.deepEqual(ml.read(), s('of'))
+  t.deepEqual(ml.read(), s('this'))
+  ml = f({eol: '\r\n'})()
+  ml.write(s('test\r\nof\r\nthis\r\n'))
+  t.deepEqual(ml.read(), s('test'))
+  t.deepEqual(ml.read(), s('of'))
+  t.deepEqual(ml.read(), s('this'))
+  ml = f({eol: '\r\n'})()
+  ml.write(s('test\nof\r\nthis\r\n'))
+  t.deepEqual(ml.read(), s('test\nof'))
+  t.deepEqual(ml.read(), s('this'))
+  ml = f({eol: ','})()
+  ml.write(s('test,of,this,'))
+  t.deepEqual(ml.read(), s('test'))
+  t.deepEqual(ml.read(), s('of'))
+  t.deepEqual(ml.read(), s('this'))
+})
